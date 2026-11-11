@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agenda Verde: aplicación web sencilla para organizar tareas.">
+  <title>Mis tareas – Agenda Verde</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header>
+    <div class="barra">
+      <p class="logo">Agenda Verde</p>
+      <nav aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tareas.html" aria-current="page">Mis tareas</a></li>
+          <li><a href="acerca.html">Acerca del proyecto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <h1>Mis tareas</h1>
+    <section class="panel" aria-labelledby="t-form">
+      <h2 id="t-form">Nueva tarea</h2>
+      <form id="form-tarea" novalidate>
+        <div>
+          <label for="titulo">Nombre de la tarea</label>
+          <input type="text" id="titulo" name="titulo" autocomplete="off" aria-describedby="error-titulo">
+          <p class="error" id="error-titulo"></p>
+        </div>
+        <div>
+          <label for="prioridad">Prioridad</label>
+          <select id="prioridad" name="prioridad" aria-describedby="error-prioridad">
+            <option value="">Selecciona una opción</option>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+          <p class="error" id="error-prioridad"></p>
+        </div>
+        <div>
+          <label for="fecha">Fecha límite</label>
+          <input type="date" id="fecha" name="fecha" aria-describedby="error-fecha">
+          <p class="error" id="error-fecha"></p>
+        </div>
+        <button type="submit" class="boton">Agregar tarea</button>
+      </form>
+      <p id="mensaje" role="status"></p>
+    </section>
+    <section class="panel" aria-labelledby="t-lista">
+      <h2 id="t-lista">Lista de tareas</h2>
+      <p id="contador" aria-live="polite"></p>
+      <ul class="lista" id="lista"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>Proyecto de medio ciclo – Desarrollo basado en plataformas (UTM) – Cristhian Mathius Vinces</p>
+  </footer>
+  <script src="js/tareas.js"></script>
+</body>
+</html>
